@@ -3,7 +3,7 @@
 
 import path from 'path';
 
-import {shell, Notification} from 'electron';
+import {app, shell, Notification} from 'electron';
 import log from 'electron-log';
 import nodeNotifier from 'node-notifier';
 
@@ -22,8 +22,8 @@ import {DownloadNotification} from './Download';
 import {NewVersionNotification, UpgradeNotification} from './Upgrade';
 import getLinuxDoNotDisturb from './dnd-linux';
 
-const logoPath = path.join(__dirname, '../../assets/mattermost.svg');
-const defaultSoundPath = path.join(__dirname, '../../assets/sounds/crackle.mp3');
+const logoPath = path.join(path.dirname(app.getAppPath()), 'src/assets/mattermost.svg');
+const defaultSoundPath = path.join(path.dirname(app.getAppPath()), 'src/assets/sounds/crackle.mp3');
 
 export const currentNotifications = new Map();
 
