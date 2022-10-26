@@ -93,7 +93,7 @@ export function sendTestNotification() {
         options: {
             title: 'Test notification',
             message: 'This is a test notification',
-            sound: 'Bing',
+            sound: true,
         },
     });
 }
